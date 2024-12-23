@@ -147,13 +147,13 @@ export const MEDIA_RECORDER_HEADLESS_NOT_SUPPORTED_BROWSERS = new Set([
 export const FILE_MENU_ITEMS = [
   /^Open$/,
   /^Open with$/,
-  /^Add to archive...$/,
-  /^Download$/,
   /^Cut$/,
   /^Copy$/,
-  /^Create shortcut$/,
-  /^Delete$/,
   /^Rename$/,
+  /^Delete$/,
+  /^Add to archive...$/,
+  /^Download$/,
+  /^Create shortcut$/,
   /^Properties$/,
 ];
 export const FOLDER_MENU_ITEMS: MenuItems = {

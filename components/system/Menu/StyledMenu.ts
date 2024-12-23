@@ -12,76 +12,75 @@ const StyledMenu = styled(motion.nav).attrs<StyledMenuProps>(({ $x, $y }) => ({
     transform: `translate(${$x}px, ${$y}px)`,
   },
 }))<StyledMenuProps>`
-  background-color: rgb(43, 43, 43);
-  border: 1px solid rgb(160, 160, 160);
-  box-shadow:
-    1px 1px 1px hsla(0, 0%, 20%, 70%),
-    2px 2px 2px hsla(0, 0%, 10%, 70%);
-  color: rgb(255, 255, 255);
+  background-color: rgb(50, 50, 50);
+  border: 1px solid rgba(255, 255, 255, 10%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 20%);
+  color: rgb(220, 220, 220);
   contain: layout;
-  font-size: 12px;
+  font-size: 13px;
   max-height: fit-content;
   max-width: fit-content;
-  padding: 4px 2px;
+  padding: 6px 4px;
   pointer-events: none;
   position: fixed;
   width: max-content;
-  z-index: ${({ $isSubMenu }) => $isSubMenu && 1};
+  z-index: ${({ $isSubMenu }) => ($isSubMenu ? 1 : 10)};
 
   ol {
     pointer-events: all;
 
     li.disabled {
-      color: rgb(110, 110, 110);
+      color: rgb(130, 130, 130);
       pointer-events: none;
     }
 
     hr {
-      background-color: rgb(128, 128, 128);
+      background-color: rgba(255, 255, 255, 10%); /* Thin separator line */
       height: 1px;
-      margin: 3px 8px;
+      margin: 6px 8px;
     }
 
     li > div {
+      border-radius: 4px;
       display: flex;
-      padding: 3px 0;
+      padding: 4px 6px;
 
       &:hover,
       &.active {
-        background-color: rgb(65, 65, 65);
+        background-color: #3886d9;
+        color: #fff;
       }
 
       figcaption {
         display: flex;
-        height: 16px;
-        line-height: 16px;
-        margin-left: 32px;
-        margin-right: 64px;
+        height: 18px;
+        line-height: 18px;
+        margin-left: 24px;
+        margin-right: 48px;
         place-items: center;
         position: relative;
-        top: -1px;
+        top: 0;
         white-space: nowrap;
         width: max-content;
 
         &.primary {
-          font-weight: 700;
+          font-weight: bold;
         }
       }
 
       picture {
-        margin: 0 -24px 0 8px;
+        margin: 0 4px;
       }
 
       span {
-        margin: -1px -24px 0 8px;
+        margin: 0 4px;
       }
 
       svg {
         fill: #fff;
-        height: 13px;
-        margin-top: 1px;
+        height: 14px;
         position: absolute;
-        width: 13px;
+        width: 14px;
 
         &.left {
           left: 8px;
@@ -93,9 +92,9 @@ const StyledMenu = styled(motion.nav).attrs<StyledMenuProps>(({ $x, $y }) => ({
       }
 
       .icon > svg {
-        height: 15px;
+        height: 16px;
         left: 10px;
-        width: 15px;
+        width: 16px;
       }
     }
   }
