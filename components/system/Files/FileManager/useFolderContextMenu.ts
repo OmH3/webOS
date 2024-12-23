@@ -388,6 +388,7 @@ const useFolderContextMenu = (
             addToFolder().then((files) =>
               updateDesktopIconPositions(files, event)
             ),
+          icon: "https://cdn-icons-png.flaticon.com/128/1090/1090923.png",
           label: "Add file(s)",
         };
         const MAP_DIRECTORY = {
@@ -417,6 +418,7 @@ const useFolderContextMenu = (
 
         return [
           {
+            icon: "https://cdn-icons-png.flaticon.com/128/5082/5082720.png",
             label: "New",
             menu: [
               {
@@ -446,12 +448,14 @@ const useFolderContextMenu = (
                 ...FS_COMMANDS,
                 {
                   action: () => open("Terminal", { url }),
+                  icon: "https://cdn-icons-png.flaticon.com/128/11743/11743804.png",
                   label: "Open Terminal here",
                 },
                 MENU_SEPERATOR,
                 {
                   action: () => pasteToFolder(event),
                   disabled: Object.keys(pasteList).length === 0,
+                  icon: "https://cdn-icons-png.flaticon.com/128/9703/9703060.png",
                   label: "Paste",
                 },
                 ...(isDesktop
