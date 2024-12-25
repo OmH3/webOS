@@ -9,7 +9,7 @@ import { useProcesses } from "contexts/process";
 import { useSession } from "contexts/session";
 import { useViewport } from "contexts/viewport";
 import { useProcessesRef } from "hooks/useProcessesRef";
-import { MENU_SEPERATOR } from "utils/constants";
+// import { MENU_SEPERATOR } from "utils/constants";
 import { toggleShowDesktop } from "utils/functions";
 // import { useWebGPUCheck } from "hooks/useWebGPUCheck";
 // import { useWindowAI } from "hooks/useWindowAI";
@@ -49,18 +49,18 @@ const useTaskbarContextMenu = (onStartButton = false): ContextMenuCapture => {
               icon: "https://cdn-icons-png.flaticon.com/128/11230/11230706.png",
               label: "Terminal",
             },
-            MENU_SEPERATOR,
+            // MENU_SEPERATOR,
             {
               action: () => open("FileExplorer"),
               icon: "https://cdn-icons-png.flaticon.com/128/8461/8461227.png",
               label: "File Explorer",
-            },
+            }
             // {
             //   action: () => open("Run"),
             //   icon: "https://cdn-icons-png.flaticon.com/128/10282/10282539.png",
             //   label: "Run",
             // },
-            MENU_SEPERATOR
+            // MENU_SEPERATOR
           );
         } else {
           menuItems.unshift(

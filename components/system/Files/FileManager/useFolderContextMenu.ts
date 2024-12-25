@@ -18,8 +18,6 @@ import { useProcessesRef } from "hooks/useProcessesRef";
 import {
   DESKTOP_PATH,
   FOLDER_ICON,
-  // INDEX_FILE,
-  MENU_SEPERATOR,
   MOUNTABLE_EXTENSIONS,
   PROCESS_DELIMITER,
 } from "utils/constants";
@@ -323,7 +321,6 @@ const useFolderContextMenu = (
               },
               label: "Scroll Here",
             },
-            MENU_SEPERATOR,
             {
               action: () => {
                 targetElement.scrollTo({
@@ -342,7 +339,6 @@ const useFolderContextMenu = (
               },
               label: "Bottom",
             },
-            MENU_SEPERATOR,
             {
               action: () => {
                 targetElement.scrollBy({
@@ -361,7 +357,6 @@ const useFolderContextMenu = (
               },
               label: "Page Down",
             },
-            MENU_SEPERATOR,
             {
               action: () => {
                 targetElement.scrollBy({
@@ -426,7 +421,6 @@ const useFolderContextMenu = (
                 icon: FOLDER_ICON,
                 label: "Folder",
               },
-              MENU_SEPERATOR,
               {
                 action: () =>
                   newEntry(NEW_RTF_DOCUMENT, Buffer.from(""), event),
@@ -444,14 +438,12 @@ const useFolderContextMenu = (
           ...(isReadOnly
             ? []
             : [
-                MENU_SEPERATOR,
                 ...FS_COMMANDS,
                 {
                   action: () => open("Terminal", { url }),
                   icon: "https://cdn-icons-png.flaticon.com/128/11743/11743804.png",
                   label: "Open Terminal here",
                 },
-                MENU_SEPERATOR,
                 {
                   action: () => pasteToFolder(event),
                   disabled: Object.keys(pasteList).length === 0,
@@ -461,7 +453,6 @@ const useFolderContextMenu = (
                 ...(isDesktop
                   ? []
                   : [
-                      MENU_SEPERATOR,
                       {
                         action: () => {
                           const activePid = Object.keys(

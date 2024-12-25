@@ -146,8 +146,7 @@ const useFileContextMenu = (
               icon: "https://cdn-icons-png.flaticon.com/128/1828/1828249.png",
               label: "Copy",
             },
-            MENU_SEPERATOR
-          , 
+            // MENU_SEPERATOR
             {
               action: () =>
                 absoluteEntries().forEach((entry) => deleteLocalPath(entry)),
@@ -159,7 +158,7 @@ const useFileContextMenu = (
               icon: "https://cdn-icons-png.flaticon.com/128/1828/1828270.png",
               label: "Rename",
             },
-            MENU_SEPERATOR,
+            // MENU_SEPERATOR,
             {
               action: () => {
                 const activePid = Object.keys(processesRef.current).find(
@@ -236,7 +235,7 @@ const useFileContextMenu = (
               //   // );
               // }
             } else {
-              menuItems.unshift(MENU_SEPERATOR);
+              // menuItems.unshift();
 
               // const canDecodeAudio = AUDIO_DECODE_FORMATS.has(pathExtension);
               // const canDecodeImage = IMAGE_DECODE_FORMATS.has(pathExtension);
@@ -455,7 +454,7 @@ const useFileContextMenu = (
         }
 
         if (remoteMount) {
-          menuItems.push(MENU_SEPERATOR, {
+          menuItems.push({
             action: () =>
               unMapFs(
                 path,
@@ -570,7 +569,7 @@ const useFileContextMenu = (
 
                 return { action, icon, label };
               }),
-              MENU_SEPERATOR,
+              // MENU_SEPERATOR,
               {
                 action: () => open("OpenWith", { url }),
                 label: "Choose another app",
